@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Azərbaycan Adları</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Admin Login Modal -->
+    <div class="admin-login-modal" id="adminLoginModal">
+        <div class="admin-login-content">
+            <div class="admin-login-header">
+                <h2><i class="fas fa-shield-alt"></i> Admin Girişi</h2>
+            </div>
+            <form class="admin-login-form" id="adminLoginForm">
+                <div class="form-group">
+                    <label for="adminUsername">İstifadəçi adı:</label>
+                    <input type="text" id="adminUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword">Şifrə:</label>
+                    <input type="password" id="adminPassword" required>
+                </div>
+                <button type="submit" class="admin-login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Giriş
+                </button>
+                <div class="admin-login-error" id="adminLoginError" style="display: none;">
+                    Yanlış istifadəçi adı və ya şifrə!
+                </div>
+            </form>
+            <div class="admin-demo-info">
+                <p><strong>Demo məlumatları:</strong></p>
+                <p>İstifadəçi adı: <code>admin</code></p>
+                <p>Şifrə: <code>admin123</code></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel" style="display: none;">
+        <!-- Admin Header -->
+        <header class="admin-header">
+            <div class="admin-header-content">
+                <div class="admin-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <h1>Admin Panel</h1>
+                </div>
+                <div class="admin-controls">
+                    <span class="admin-welcome">Xoş gəlmisiniz, Admin</span>
+                    <button class="admin-logout-btn" onclick="adminLogout()">
+                        <i class="fas fa-sign-out-alt"></i> Çıxış
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Admin Navigation -->
+        <nav class="admin-nav">
+            <button class="admin-nav-btn active" data-section="suggestions">
+                <i class="fas fa-inbox"></i>
+                <span>Təklif edilən adlar</span>
+                <span class="suggestion-count" id="suggestionCount">0</span>
+            </button>
+            <button class="admin-nav-btn" data-section="approved">
+                <i class="fas fa-check-circle"></i>
+                <span>Təsdiqlənmiş adlar</span>
+            </button>
+            <button class="admin-nav-btn" data-section="rejected">
+                <i class="fas fa-times-circle"></i>
+                <span>Rədd edilmiş adlar</span>
+            </button>
+            <button class="admin-nav-btn" data-section="statistics">
+                <i class="fas fa-chart-bar"></i>
+                <span>Statistika</span>
+            </button>
+        </nav>
+
+        <!-- Admin Content -->
+        <main class="admin-main">
+            <!-- Suggestions Section -->
+            <section class="admin-section active" id="suggestions">
+                <div class="admin-section-header">
+                    <h2><i class="fas fa-inbox"></i> Təklif edilən adlar</h2>
+                    <div class="admin-actions">
+                        <button class="admin-btn secondary" onclick="refreshSuggestions()">
+                            <i class="fas fa-sync-alt"></i> Yenilə
+                        </button>
+                    </div>
+                </div>
+                <div class="suggestions-grid" id="suggestionsGrid">
+                    <!-- Suggestions will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Approved Section -->
+            <section class="admin-section" id="approved">
+                <div class="admin-section-header">
+                    <h2><i class="fas fa-check-circle"></i> Təsdiqlənmiş adlar</h2>
+                </div>
+                <div class="approved-grid" id="approvedGrid">
+                    <!-- Approved names will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Rejected Section -->
+            <section class="admin-section" id="rejected">
+                <div class="admin-section-header">
+                    <h2><i class="fas fa-times-circle"></i> Rədd edilmiş adlar</h2>
+                </div>
+                <div class="rejected-grid" id="rejectedGrid">
+                    <!-- Rejected names will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="admin-section" id="statistics">
+                <div class="admin-section-header">
+                    <h2><i class="fas fa-chart-bar"></i> Statistika</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-inbox"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalSuggestions">0</h3>
+                            <p>Təklif edilən</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon approved">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalApproved">0</h3>
+                            <p>Təsdiqlənmiş</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon rejected">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalRejected">0</h3>
+                            <p>Rədd edilmiş</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-list"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalNames">205</h3>
+                            <p>Ümumi adlar</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Edit Name Modal -->
+    <div class="modal-overlay" id="editNameModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> Adı düzənlə</h3>
+                <button class="modal-close" onclick="closeEditModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="edit-name-form" id="editNameForm">
+                    <input type="hidden" id="editNameId">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="editName">Ad:</label>
+                            <input type="text" id="editName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editGender">Cinsi:</label>
+                            <select id="editGender" required>
+                                <option value="qız">Qız</option>
+                                <option value="oğlan">Oğlan</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="editMeaning">Mənası:</label>
+                            <textarea id="editMeaning" required rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="editOrigin">Mənşəyi:</label>
+                            <select id="editOrigin" required>
+                                <option value="azərbaycan">Azərbaycan</option>
+                                <option value="türk">Türk</option>
+                                <option value="ərəb">Ərəb</option>
+                                <option value="fars">Fars</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editPopularity">Populyarlıq (%):</label>
+                            <input type="number" id="editPopularity" min="1" max="100" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="editSimilar">Oxşar adlar (vergüllə ayırın):</label>
+                            <input type="text" id="editSimilar" placeholder="Məs: Aysel, Ayla, Aynur">
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="admin-btn secondary" onclick="closeEditModal()">
+                            <i class="fas fa-times"></i> Ləğv et
+                        </button>
+                        <button type="submit" class="admin-btn primary">
+                            <i class="fas fa-save"></i> Yadda saxla
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="admin-toast" id="adminToast">
+        <div class="admin-toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="adminToastMessage">Əməliyyat uğurla tamamlandı</span>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal - admin.html-in sonuna əlavə et -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="confirmation-content">
+            <div class="confirmation-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Təsdiq tələb olunur</h3>
+            </div>
+            <div class="confirmation-body">
+                <p id="confirmationMessage">Bu əməliyyatı həyata keçirmək istədiyinizə əminsiniz?</p>
+            </div>
+            <div class="confirmation-actions">
+                <button class="admin-btn secondary" onclick="closeConfirmationModal()">
+                    <i class="fas fa-times"></i> Yox
+                </button>
+                <button class="admin-btn danger" id="confirmButton">
+                    <i class="fas fa-check"></i> Hə
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title data-translate="site-title">Azərbaycan Adlarının Mənası</title>
+
+  <meta name="description" content="Azərbaycan adlarının mənaları və mənşəyi. Qız və oğlan adları haqqında ətraflı məlumat və tövsiyələr." />
+  <meta name="keywords" content="Azərbaycan adları, ad mənası, qız adları, oğlan adları, mənalı adlar, ad seçimi, islam adları" />
+  <meta name="author" content="Ülvi Əhədov" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://azerbaycanadlari.xyz/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Azərbaycan Adları – Adların Mənası" />
+  <meta property="og:description" content="Minlərlə Azərbaycan adı və onların mənaları. Qız və oğlan adları üçün bələdçi." />
+  <meta property="og:image" content="https://azerbaycanadlari.xyz/assets/logo.png" />
+  <meta property="og:url" content="https://azerbaycanadlari.xyz/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Azərbaycan Adları – Adların Mənası" />
+  <meta name="twitter:description" content="Minlərlə Azərbaycan adı və onların mənaları. Qız və oğlan adları üçün bələdçi." />
+  <meta name="twitter:image" content="https://azerbaycanadlari.xyz/assets/logo.png" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- CSS: Performans üçün minimal ön yükləmə -->
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- DNS Prefetch və Preconnect -->
+  <link rel="dns-prefetch" href="//azerbaycanadlari.xyz" />
+  <link rel="preconnect" href="https://azerbaycanadlari.xyz" crossorigin />
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  
+  <!-- Google Adsense, Fonts və Scriptlər -->
+  <meta name="google-adsense-account" content="ca-pub-9486021328092380">
+  <script src="//couphaithuph.net/ntfc.php?p=9476024" data-cfasync="false" async onerror="_uqggqx()" onload="_euoavpd()"></script> 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">🇦🇿</div>
+            <div class="loading-text" data-translate="site-title">Azərbaycan Adları</div>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <div class="logo-icon">🇦🇿</div>
+        <div class="logo-text">
+          <h1 data-translate="site-title">Azərbaycan Adları</h1>
+          <span class="logo-subtitle" data-translate="site-subtitle">Mənalar və Mənşələr</span>
+        </div>
+      </div>
+             </div>
+                </div>
+                <div class="header-controls">
+                    <button class="control-btn theme-toggle" id="themeToggle" title="Tema dəyiş">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="control-btn lang-toggle" id="langToggle" title="Dil dəyiş">
+                        <span class="lang-text">EN</span>
+                    </button>
+                    <button class="control-btn favorites-toggle" id="favoritesToggle" title="Favoritlər">
+                        <i class="fas fa-heart"></i>
+                        <span class="favorites-count" id="favoritesCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Burada saytın əsas kontenti olacaq -->
+
+<div id="consent-message" style="display:none; position: fixed; bottom: 0; width: 100%; background: #222; color: white; padding: 15px; text-align: center; z-index: 9999;">
+  This site uses cookies to collect information to serve ads and improve your experience. This notice does not apply to all countries.
+  <button id="accept-consent" style="margin-left: 15px; padding: 8px 12px; background: #4CAF50; border: none; color: white; cursor: pointer;">Allow</button>
+  <button id="manage-consent" style="margin-left: 10px; padding: 8px 12px; background: #555; border: none; color: white; cursor: pointer;">Manage Preferences</button>
+</div>
+
+<script>
+  const consentMessage = document.getElementById('consent-message');
+  const acceptBtn = document.getElementById('accept-consent');
+  const manageBtn = document.getElementById('manage-consent');
+
+  if(localStorage.getItem('userConsent') === 'accepted') {
+    consentMessage.style.display = 'none';
+  } else {
+    consentMessage.style.display = 'block';
+  }
+
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('userConsent', 'accepted');
+    consentMessage.style.display = 'none';
+  });
+
+  manageBtn.addEventListener('click', () => {
+    window.location.href = '/consent-settings.html'; // İdarəetmə səhifəsinə yönləndir
+  });
+</script>
+
+
+<!-- Top bar bölməsi -->
+<div class="top-bar">
+  <span class="top-bar-email" style="user-select: text;">📧 xenderman31@gmail.com</span>
+  
+  <!-- Privacy link sağ üst küncdə, açılan yeni pəncərədə -->
+  <a href="privacy.html" class="privacy-link" target="_blank" rel="noopener noreferrer" style="margin-left:20px;">
+    Məxfilik Siyasəti/Privacy
+  </a>
+</div>
+
+<!-- Digər bağlayıcı div-lər varsa, onları tam bağlamağa diqqət et -->
+</header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title" data-translate="hero-title">
+                        Azərbaycan adlarının gözəl dünyasını kəşf edin
+                    </h2>
+                    <p class="hero-description" data-translate="hero-description">
+                        Minlərlə ad, onların mənaları və mənşələri haqqında ətraflı məlumat
+                    </p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalNames">200+ </div>
+                        <div class="stat-label" data-translate="stat-names">Adlar</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label" data-translate="stat-origins">Mənşə</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="totalViews">0</div>
+                        <div class="stat-label" data-translate="stat-views">Baxış</div>
+                        <div class="stats-timer" style="display: none;">
+                            <i class="fas fa-clock timer-icon"></i>
+                            <span id="timerText">5:00</span>
+                        </div>
+                        <div class="stats-update-info" data-translate="updates-every-5-minutes">5 dəqiqədə bir yenilənir</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Daily Name Section -->
+            <section class="daily-name-section" id="dailyNameSection">
+                <div class="section-header">
+                    <h3 class="section-title">
+                        <i class="fas fa-calendar-day"></i>
+                        <span data-translate="daily-name-title">Günün Adı</span>
+                    </h3>
+                </div>
+                <div class="daily-name-card" id="dailyNameCard">
+                    <!-- Daily name will be inserted here -->
+                </div>
+            </section>
+
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="Ad axtar..." data-translate-placeholder="search-placeholder" />
+                        <button class="search-clear" id="searchClear" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all" data-translate="filter-all">
+                            <i class="fas fa-list"></i>
+                            <span>Hamısı</span>
+                        </button>
+                        <button class="filter-btn" data-filter="qız" data-translate="filter-girl">
+                            <i class="fas fa-female"></i>
+                            <span>Qız</span>
+                        </button>
+                        <button class="filter-btn" data-filter="oğlan" data-translate="filter-boy">
+                            <i class="fas fa-male"></i>
+                            <span>Oğlan</span>
+                        </button>
+                    </div>
+                    <div class="origin-filters">
+                        <select class="origin-select" id="originFilter">
+                            <option value="all" data-translate="origin-all">Bütün mənşələr</option>
+                            <option value="azərbaycan" data-translate="origin-azerbaijani">Azərbaycan</option>
+                            <option value="türk" data-translate="origin-turkish">Türk</option>
+                            <option value="ərəb" data-translate="origin-arabic">Ərəb</option>
+                            <option value="fars" data-translate="origin-persian">Fars</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Tabs -->
+            <nav class="nav-tabs">
+                <button class="nav-tab active" data-tab="home" data-translate="tab-home">
+                    <i class="fas fa-home"></i>
+                    <span>Ana Səhifə</span>
+                </button>
+                <button class="nav-tab" data-tab="alphabet" data-translate="tab-alphabet">
+                    <i class="fas fa-sort-alpha-down"></i>
+                    <span>Əlifba</span>
+                </button>
+                <button class="nav-tab" data-tab="popular" data-translate="tab-popular">
+                    <i class="fas fa-fire"></i>
+                    <span>Populyar</span>
+                </button>
+                <button class="nav-tab" data-tab="favorites" data-translate="tab-favorites">
+                    <i class="fas fa-heart"></i>
+                    <span>Favoritlər</span>
+                </button>
+                <button class="nav-tab" data-tab="suggest" data-translate="tab-suggest">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Tövsiyə</span>
+                </button>
+                <button class="nav-tab" data-tab="quiz" data-translate="tab-quiz">
+                    <i class="fas fa-brain"></i>
+                    <span>Test</span>
+                </button>
+                <button class="nav-tab" data-tab="add" data-translate="tab-add">
+                    <i class="fas fa-plus"></i>
+                    <span>Əlavə Et</span>
+                </button>
+            </nav>
+
+            <!-- Tab Contents -->
+            <div class="tab-content">
+                <!-- Home Tab -->
+                <div class="tab-pane active" id="home">
+                    <!-- Featured Sections -->
+                    <div class="featured-sections">
+                        <!-- Celebrity Birthdays -->
+                        <section class="feature-card celebrity-section" id="celebritySection">
+                            <div class="feature-header">
+                                <h4 class="feature-title">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <span data-translate="celebrity-title">Bu gün ad günü olan məşhurlar</span>
+                                </h4>
+                            </div>
+                            <div class="celebrity-list" id="celebrityList">
+                                <!-- Celebrity names will be inserted here -->
+                            </div>
+                        </section>
+
+                        <!-- Fun Facts -->
+                        <section class="feature-card facts-section">
+                            <div class="feature-header">
+                                <h4 class="feature-title">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span data-translate="facts-title">Ad haqqında bilmədiklərin</span>
+                                </h4>
+                                <button class="refresh-fact" id="refreshFact" title="Yeni fakt">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                            <div class="fact-content" id="factCard">
+                                <!-- Random fact will be inserted here -->
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Names Grid -->
+                    <section class="names-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-list"></i>
+                                <span data-translate="names-title">Bütün Adlar</span>
+                            </h3>
+						
+                            <div class="sort-controls">
+                                <select class="sort-select" id="sortSelect">
+                                    <option value="name" data-translate="sort-name">Ada görə</option>
+                                    <option value="popularity" data-translate="sort-popularity">Populyarlığa görə</option>
+                                    <option value="views" data-translate="sort-views">Baxışa görə</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="names-grid" id="namesGrid">
+                            <!-- Names will be inserted here -->
+                        </div>
+                        <div class="load-more-container">
+                            <button class="load-more-btn" id="loadMoreBtn" style="display: none;">
+                                <i class="fas fa-chevron-down"></i>
+                                <span data-translate="load-more">Daha çox göstər</span>
+                            </button>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Alphabet Tab -->
+                <div class="tab-pane" id="alphabet">
+                    <div class="alphabet-section">
+                        <div class="alphabet-nav" id="alphabetNav">
+                            <!-- Alphabet buttons will be inserted here -->
+                        </div>
+                        <div class="alphabet-results">
+                            <div class="alphabet-names" id="alphabetNames">
+                                <!-- Filtered names will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Popular Tab -->
+                <div class="tab-pane" id="popular">
+                    <div class="popular-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-fire"></i>
+                                <span data-translate="popular-title">Ən Çox Baxılan Adlar</span>
+                            </h3>
+                        </div>
+                        <div class="popular-names" id="popularNames">
+                            <!-- Popular names will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Favorites Tab -->
+                <div class="tab-pane" id="favorites">
+                    <div class="favorites-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-heart"></i>
+                                <span data-translate="favorites-title">Favori Adlarım</span>
+                            </h3>
+                            <button class="clear-favorites" id="clearFavorites" style="display: none;">
+                                <i class="fas fa-trash"></i>
+                                <span data-translate="clear-favorites">Hamısını sil</span>
+                            </button>
+                        </div>
+                        <div class="favorites-content" id="favoritesContent">
+                            <div class="empty-favorites" id="emptyFavorites">
+                                <div class="empty-icon">💔</div>
+                                <h4 data-translate="empty-favorites-title">Hələ favori adınız yoxdur</h4>
+                                <p data-translate="empty-favorites-text">Bəyəndiyiniz adları ❤️ düyməsinə basaraq əlavə edin</p>
+                            </div>
+                            <div class="favorites-grid" id="favoritesGrid">
+                                <!-- Favorite names will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suggest Tab -->
+                <div class="tab-pane" id="suggest">
+                    <div class="suggest-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-magic"></i>
+                                <span data-translate="suggest-title">Mənə Ad Tövsiyə Et</span>
+                            </h3>
+                        </div>
+                        <div class="suggest-form" id="suggestForm">
+                            <!-- Suggestion form will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Tab -->
+                <div class="tab-pane" id="quiz">
+                    <div class="quiz-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-brain"></i>
+                                <span data-translate="quiz-title">Ad Testi</span>
+                            </h3>
+                        </div>
+                        <div class="quiz-container" id="quizContainer">
+                            <!-- Quiz will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Name Tab -->
+                <div class="tab-pane" id="add">
+                    <div class="add-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-plus-circle"></i>
+                                <span data-translate="add-title">Yeni Ad Təklif Et</span>
+                            </h3>
+                        </div>
+                        <form class="add-form" id="addForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label data-translate="form-name">Ad:</label>
+                                    <input type="text" id="newName" required />
+                                </div>
+                                <div class="form-group">
+                                    <label data-translate="form-gender">Cinsi:</label>
+                                    <select id="newGender" required>
+                                        <option value="" data-translate="form-select">Seçin</option>
+                                        <option value="qız" data-translate="form-girl">Qız</option>
+                                        <option value="oğlan" data-translate="form-boy">Oğlan</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label data-translate="form-meaning">Mənası:</label>
+                                    <textarea id="newMeaning" required rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label data-translate="form-origin">Mənşəyi:</label>
+                                    <select id="newOrigin" required>
+                                        <option value="" data-translate="form-select">Seçin</option>
+                                        <option value="azərbaycan" data-translate="origin-azerbaijani">Azərbaycan</option>
+                                        <option value="türk" data-translate="origin-turkish">Türk</option>
+                                        <option value="ərəb" data-translate="origin-arabic">Ərəb</option>
+                                        <option value="fars" data-translate="origin-persian">Fars</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label data-translate="form-similar">Oxşar adlar (vergüllə ayırın):</label>
+                                    <input type="text" id="newSimilar" placeholder="Məs: Aysel, Ayla, Aynur" />
+                                </div>
+                            </div>
+                            <button type="submit" class="submit-btn" data-translate="form-submit">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Göndər</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Name Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="nameModal">
+            <div class="modal-header">
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Name details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast success-toast" id="successToast">
+        <div class="toast-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="toast-content">
+            <div class="toast-title" data-translate="success-title">Uğurlu!</div>
+            <div class="toast-message" id="toastMessage" data-translate="success-message">Əməliyyat uğurla tamamlandı</div>
+        </div>
+        <button class="toast-close" onclick="hideToast()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <button class="fab" id="scrollToTop" title="Yuxarı qalx">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+<!-- Cookie Pop-up -->
+<div id="cookieBar" class="cookie-popup">
+  <div class="cookie-popup-content">
+    Saytımızda cookie-lərdən istifadə olunur. Davam etməklə razılığınızı bildirirsiniz.
+    <button id="cookieAcceptBtn" class="cookie-accept-btn">Başa düşdüm</button>
+  </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <span>© 2025 Azərbaycan Adlarının. Bütün hüquqlar qorunur.</span>
+            </div>
+            <div class="footer-right">
+                <a href="#" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Debug script
+        console.log("HTML yükləndi");
+        window.addEventListener("load", () => {
+            console.log("Bütün resurslar yükləndi");
+        });
+
+        // Chart.js yüklənib-yüklənmədiyini yoxla
+        window.addEventListener("DOMContentLoaded", () => {
+            console.log("DOM hazır");
+            if (typeof Chart !== "undefined") {
+                console.log("Chart.js uğurla yükləndi");
+            } else {
+                console.error("Chart.js yüklənmədi");
+            }
+        });
+
+        // Cookie Bar Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const cookieBar = document.getElementById("cookieBar");
+            const cookieAcceptBtn = document.getElementById("cookieAcceptBtn");
+
+            // Funksiya: cookie oxu
+            function getCookie(name) {
+                const value = "; " + document.cookie;
+                const parts = value.split("; " + name + "=");
+                if (parts.length === 2) return parts.pop().split(";").shift();
+            }
+
+            // Funksiya: cookie yaz
+            function setCookie(name, value, days) {
+                const d = new Date();
+                d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+                const expires = "expires=" + d.toUTCString();
+                document.cookie = name + "=" + value + ";" + expires + ";path=/";
+            }
+
+            // Əgər cookie yoxdursa, barı göstər
+            if (!getCookie("cookieConsent")) {
+                cookieBar.style.display = "flex";
+            }
+
+            // Cookie qəbul ediləndə
+            cookieAcceptBtn.addEventListener("click", () => {
+                setCookie("cookieConsent", "yes", 365);
+                cookieBar.style.display = "none";
+            });
+        });
+		// yukleme ekranninda qalmasin
+	  window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loadingScreen");
+    if (loadingScreen) {
+      loadingScreen.style.display = "none";
+    }
+  });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

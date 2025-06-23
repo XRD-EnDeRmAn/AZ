@@ -1,0 +1,91 @@
+<!-- Premium Modal -->
+<div class="premium-modal" id="premiumModal">
+  <div class="premium-modal-content">
+    <div class="premium-icon">👑</div>
+    <h2 class="premium-title" id="premiumFeatureTitle">Premium Xüsusiyyət</h2>
+    <p class="premium-description" id="premiumFeatureDescription">
+      Bu funksiya premium istifadəçilər üçün nəzərdə tutulub
+    </p>
+    
+    <div class="premium-plans">
+      <!-- Free Plan -->
+      <div class="premium-plan">
+        <h3 class="plan-name">Pulsuz</h3>
+        <div class="plan-price">
+          <span class="currency">₼</span>0
+        </div>
+        <div class="plan-duration">həmişə</div>
+        <ul class="plan-features">
+          <li>50 ad baxışı (gündəlik)</li>
+          <li>10 favori ad</li>
+          <li>Əsas axtarış</li>
+          <li>Günün adı</li>
+          <li class="unavailable">Təkmil analitika</li>
+          <li class="unavailable">AI tövsiyələr</li>
+          <li class="unavailable">Reklamsız</li>
+        </ul>
+        <button class="upgrade-btn current">Cari Plan</button>
+      </div>
+      
+      <!-- Premium Plan -->
+      <div class="premium-plan recommended">
+        <h3 class="plan-name">Premium</h3>
+        <div class="plan-price">
+          <span class="currency">₼</span>4.99
+        </div>
+        <div class="plan-duration">aylıq</div>
+        <ul class="plan-features">
+          <li>Limitsiz baxış</li>
+          <li>Limitsiz favoritlər</li>
+          <li>Təkmil analitika</li>
+          <li>Ad tarixi</li>
+          <li>Şəxsi tövsiyələr</li>
+          <li>Reklamsız təcrübə</li>
+          <li>Offline rejim</li>
+          <li>Data eksport</li>
+        </ul>
+        <button class="upgrade-btn" onclick="upgradeToPremium('premium')">
+          Premium Al
+        </button>
+      </div>
+      
+      <!-- Expert Plan -->
+      <div class="premium-plan">
+        <h3 class="plan-name">Ekspert</h3>
+        <div class="plan-price">
+          <span class="currency">₼</span>9.99
+        </div>
+        <div class="plan-duration">aylıq</div>
+        <ul class="plan-features">
+          <li>Premium-dəki hər şey</li>
+          <li>AI ad generatoru</li>
+          <li>Şəxsi konsultasiya</li>
+          <li>Ekskluziv məzmun</li>
+          <li>Ad sertifikatları</li>
+          <li>Numerologiya</li>
+          <li>API girişi</li>
+          <li>Prioritet dəstək</li>
+        </ul>
+        <button class="upgrade-btn" onclick="upgradeToPremium('expert')">
+          Ekspert Al
+        </button>
+      </div>
+    </div>
+    
+    <button class="modal-close" onclick="closePremiumModal()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Usage Indicator -->
+<div class="usage-indicator" id="usageIndicator" style="display: none;">
+  <div class="usage-text">
+    <span>Günlük limit:</span>
+    <span id="usageCount">25/50</span>
+  </div>
+  <div class="usage-bar">
+    <div class="usage-fill" id="usageFill" style="width: 50%"></div>
+  </div>
+  <small>Premium planla limitsiz istifadə edin!</small>
+</div>

@@ -1,2 +1,1 @@
-# AZ
-AZ
+# Azerbaycan-Adlari
